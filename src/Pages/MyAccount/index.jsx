@@ -1,10 +1,11 @@
+import Layout from "../../Components/Layout"
 
 function MyAccount() {
 
     return (
-        <div className='bg-red-700'>
+        <Layout>
             Hola MyAccount
-        </div>
+        </Layout>
           
     )
   }
