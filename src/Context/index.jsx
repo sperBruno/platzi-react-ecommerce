@@ -10,6 +10,10 @@ export const ShoppingCardProvider = ({ children }) => {
   //ShowProductDetail
   const [productToShow, setProductToShow] = useState({});
   const [cardProducts, setCardProducts] = useState([]);
+  
+  //Shoping cart orders
+  const [order, setOrder] = useState([]);
+
 
   console.log(`Count: ${count}`);
 
@@ -44,6 +48,8 @@ export const ShoppingCardProvider = ({ children }) => {
         isCheckoutSideMenuOpen,
         openOpenCheckoutSideMenu,
         closeCheckoutSideMenu,
+        order,
+        setOrder,
       }}
     >
       {children}
