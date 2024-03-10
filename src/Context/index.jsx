@@ -5,7 +5,7 @@ export const ShoppingCardContext = createContext();
 export const ShoppingCardProvider = ({ children }) => {
   const [count, setCount] = useState(0);
   const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
-  const [isCheckooutSideMenuOpen, setIsCheckoutSideMenuOpen] = useState(false);
+  const [isCheckoutSideMenuOpen, setIsCheckoutSideMenuOpen] = useState(false);
 
   //ShowProductDetail
   const [productToShow, setProductToShow] = useState({});
@@ -41,7 +41,7 @@ export const ShoppingCardProvider = ({ children }) => {
         setProductToShow,
         cardProducts,
         setCardProducts,
-        isCheckooutSideMenuOpen,
+        isCheckoutSideMenuOpen,
         openOpenCheckoutSideMenu,
         closeCheckoutSideMenu,
       }}

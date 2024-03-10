@@ -2,13 +2,15 @@ import { useContext } from "react";
 import "./CheckoutSideMenu.css";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { ShoppingCardContext } from "../../Context";
+import OrderCard from "../OrderCard";
 
 const CheckoutSideMenu = () => {
   const context = useContext(ShoppingCardContext);
+  console.log(context.cardProducts);
   return (
     <aside
       className={`${
-        context.isCheckooutSideMenuOpen ? "flex" : "hidden"
+        context.isCheckoutSideMenuOpen ? "flex" : "hidden"
       } checkout-side-menu flex-col fixed right-0 border border-black rounded bg-white`}
     >
       <div className="flex justify-between items-center p-6">
@@ -18,8 +20,19 @@ const CheckoutSideMenu = () => {
           onClick={() => context.closeCheckoutSideMenu()}
         />
       </div>
-
-
+      <div className="px-6 overflow-y-scroll">
+        {context.cardProducts.map((product) => {
+          return (
+            <OrderCard
+              id={product.id}
+              key={product.id}
+              title={product.title}
+              price={product.price}
+              imageUrl={product.image}
+            ></OrderCard>
+          );
+        })}
+      </div>
     </aside>
   );
 };

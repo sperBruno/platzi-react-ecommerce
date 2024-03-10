@@ -23,7 +23,7 @@ function Home() {
       Home
       <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg">
         {items?.map((item) => {
-          // console.log(JSON.stringify(item.image));
+          console.log(JSON.stringify(item.id));
 
           return <Card item={item} key={item.id}></Card>;
         })}
