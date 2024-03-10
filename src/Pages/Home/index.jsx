@@ -8,9 +8,14 @@ function Home() {
   const [items, setItems] = useState(null);
 
   useEffect(() => {
-    fetch("https://api.escuelajs.co/api/v1/products")
+    // fetch("https://api.escuelajs.co/api/v1/products")
+    fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
-      .then((data) => setItems(data));
+      .then((data) => 
+      {
+        // console.log(data)
+        setItems(data)});
+      
   }, []);
 
   return (
@@ -18,7 +23,7 @@ function Home() {
       Home
       <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg">
         {items?.map((item) => {
-          console.log(JSON.stringify(item.images[0]));
+          // console.log(JSON.stringify(item.image));
 
           return <Card item={item} key={item.id}></Card>;
         })}
