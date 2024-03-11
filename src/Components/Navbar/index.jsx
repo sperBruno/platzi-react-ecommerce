@@ -15,6 +15,9 @@ const Navbar = () => {
         <li>
           <NavLink
             to="/"
+            onClick={() => {
+              context.setSearchByCategory(null);
+            }}
             className={({ isActive }) => {
               return isActive ? activeStyle : undefined;
             }}
@@ -25,6 +28,9 @@ const Navbar = () => {
         <li>
           <NavLink
             to="/clothes"
+            onClick={() => {
+              context.setSearchByCategory("cloth");
+            }}
             className={({ isActive }) => {
               return isActive ? activeStyle : undefined;
             }}
@@ -34,7 +40,10 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/electronic"
+            to="/electronics"
+            onClick={() => {
+              context.setSearchByCategory("electronics");
+            }}
             className={({ isActive }) => {
               return isActive ? activeStyle : undefined;
             }}
@@ -45,6 +54,9 @@ const Navbar = () => {
         <li>
           <NavLink
             to="/fornitures"
+            onClick={() => {
+              context.setSearchByCategory("fornitures");
+            }}
             className={({ isActive }) => {
               return isActive ? activeStyle : undefined;
             }}
@@ -55,6 +67,9 @@ const Navbar = () => {
         <li>
           <NavLink
             to="/toys"
+            onClick={() => {
+              context.setSearchByCategory("toys");
+            }}
             className={({ isActive }) => {
               return isActive ? activeStyle : undefined;
             }}
@@ -65,6 +80,9 @@ const Navbar = () => {
         <li>
           <NavLink
             to="/others"
+            onClick={() => {
+              context.setSearchByCategory("others");
+            }}
             className={({ isActive }) => {
               return isActive ? activeStyle : undefined;
             }}
@@ -127,7 +145,7 @@ const Navbar = () => {
         </li>
         <li className="flex justify-center">
           <ShoppingBagIcon className="h-6 w-6 text-black-500" />
-          <div>{context.count}</div>
+          <div>{context.cardProducts.length}</div>
         </li>
       </ul>
     </nav>

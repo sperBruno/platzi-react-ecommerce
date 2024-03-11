@@ -21,7 +21,7 @@ const Card = (item) => {
     });
 
     const isInCart = filteredCart.length > 0;
-    console.log(`${id} is in cart: ${isInCart}`);
+    // console.log(`${id} is in cart: ${isInCart}`);
     if (isInCart) {
       return (
         <div className="absolute top-0 right-0 flex justify-center items-center bg-black w-6 h-6 rounded-full text-center text-medium m-2 p-1">

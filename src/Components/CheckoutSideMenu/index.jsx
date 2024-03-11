@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const CheckoutSideMenu = () => {
   const context = useContext(ShoppingCardContext);
-  console.log(context.cardProducts);
+  //   console.log(context.cardProducts);
 
   const handleDelete = (id) => {
     const filteredProducts = context.cardProducts.filter(
@@ -25,6 +25,7 @@ const CheckoutSideMenu = () => {
     };
     context.setOrder([...context.order, orderToAdd]);
     context.setCardProducts([]);
+    context.setSearchByTitle(null);
   };
   return (
     <aside
@@ -60,7 +61,7 @@ const CheckoutSideMenu = () => {
             ${totalPrice(context.cardProducts)}
           </span>
         </p>
-        <Link to='/my-orders/last'>
+        <Link to="/my-orders/last">
           <button
             className="w-full bg-black py-3 text-white rounded "
             onClick={() => handleCheckout()}
